@@ -1,0 +1,23 @@
+.card {
+  height: 450px;
+  border: 2.5px solid #fea667;
+  box-shadow: 3px 3px #de965f !important;
+
+  img {
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &-body {
+    .card-title {
+      height: 20px;
+      overflow: hidden;
+    }
+  }
+
+  .button {
+    background-color: #082f4b;
+    border: none !important;
+  }
+}

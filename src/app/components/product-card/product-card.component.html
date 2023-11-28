@@ -1,0 +1,30 @@
+<div class="card shadow mb-4" style="width: 18rem">
+  <img
+    [src]="product.image"
+    class="card-img-top ms-3 mt-1"
+    [alt]="product.title"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <button
+      class="btn btn-primary mt-3 button shadow"
+      (click)="addProduct(product)"
+    >
+      Agregar al <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+    <div class="d-flex justify-content-evenly mt-2">
+      <span>
+        Disponibles:
+        {{ product.rating.count }}
+      </span>
+      <span> Precio: {{ product.price }} $ </span>
+    </div>
+  </div>
+  <div
+    class="alert alert-warning fixed-bottom ms-3 w-25"
+    role="alert"
+    *ngIf="alert === true"
+  >
+    Has agregado un producto al carrito
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<nav
+  class="navbar fixed-top navbar-expand nav-menu justify-content-between shadow"
+>
+  <a class="navbar-brand logo-text" routerLink="store">
+    <img src="assets/aromas-logo.png" width="100px" alt="Cody Store" />
+    AromasDanii
+  </a>
+
+  <ul class="navbar-nav me-4">
+    <li class="nav-item">
+      <a
+        class="nav-link text-white links"
+        aria-current="page"
+        routerLink="tasks"
+      >
+        Mis tareas
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link text-white links"
+        aria-current="page"
+        routerLink="store"
+      >
+        Tienda
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link text-white links flex align-items-center"
+        aria-current="page"
+        routerLink="cart"
+      >
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span
+          class="position-absolute translate-middle badge rounded-pill bg-danger"
+        >
+          {{ cartService.totalItems() }}
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>

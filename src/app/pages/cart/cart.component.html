@@ -1,0 +1,28 @@
+<ol class="list-group list-group-numbered">
+  <div class="mt-4" *ngIf="cartService.cart().length < 1">
+    <h2 class="mt-4">No se ha agregado nada aun al carrito</h2>
+  </div>
+  <li
+    class="list-group-item d-flex justify-content-between align-items-start mt-5"
+    *ngFor="let product of cartService.cart(); let i = index"
+  >
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">{{ product.title }}</div>
+    </div>
+    <span class="badge bg-primary rounded-pill"
+      >Precio: $/{{ product.price }}</span
+    >
+    <button class="btn btn-danger ms-2" (click)="removeProduct(i)">
+      Eliminar
+    </button>
+  </li>
+</ol>
+
+<div class="d-flex align-items-center justify-content-end gap-1">
+  <h2>Subtotal:</h2>
+  <span class="h1">{{ cartService.amount() }} $</span>
+</div>
+
+<div *ngIf="cartService.cart().length != 0">
+  <button class="btn button" (click)="sellProducts()">Vendido</button>
+</div>

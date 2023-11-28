@@ -1,0 +1,24 @@
+.nav-menu {
+  background: rgb(229, 180, 137);
+  background: linear-gradient(
+    0deg,
+    rgba(229, 180, 137, 1) 0%,
+    rgba(250, 235, 218, 1) 66%,
+    rgba(250, 235, 218, 1) 100%
+  );
+}
+
+.logo-text {
+  color: #1a3d57;
+  font-weight: bold;
+}
+
+.links {
+  font-size: 20px;
+  color: #1a3d57 !important;
+  font-weight: bolder;
+
+  i {
+    font-size: 24;
+  }
+}
