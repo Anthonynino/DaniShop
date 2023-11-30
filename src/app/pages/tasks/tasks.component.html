@@ -1,15 +1,30 @@
 <div class="d-grid">
   <div class="row mt-3">
-    <div class="col-9">
-      <input
-        type="email"
-        class="form-control"
-        placeholder="Ingresa tarea/pedidos pendientes"
-        [formControl]="task"
-      />
+    <div class="grid grid-cols-2">
+      <div class="mb-5">
+        <label
+          for="email"
+          class="ms-4 text-lg font-semibold text-gray-900 dark:text-white"
+          >Agrega alguna tarea</label
+        >
+        <input
+          type="text"
+          class="bg-gray-50 border mt-5 ms-4 me-3 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Escribe aqui tu tarea pendiente"
+          required
+          [formControl]="task"
+        />
+      </div>
+      <div class="grid grid-cols-4 sm:grid-cols-2">
+        <button
+          (click)="addTasks()"
+          type="button"
+          class="h-12 ms-8 mt-11 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
+          Agrega una tarea
+        </button>
+      </div>
     </div>
-
-    <button class="btn button col-3" (click)="addTasks()">Agregar</button>
   </div>
 
   <div class="row mt-4" *ngFor="let task of tasks()">
