@@ -1,11 +1,11 @@
-<div class="card shadow rounded mb-4" style="width: 18rem">
+<div class="card shadow-2xl rounded mb-6" style="width: 18rem">
   <img
     [src]="product.image"
     class="card-img-top ms-3 mt-1"
     [alt]="product.title"
   />
   <div class="card-body">
-    <h5 class="card-title mx-5 my-3">{{ product.title }}</h5>
+    <h5 class="card-title mx-5 my-3 font-semibold">{{ product.title }}</h5>
     <button
       class="bg-[#034159] hover:bg-blue-400 text-white font-bold mt-3 rounded-full py-2 px-4 border-b-4 border-[#032559] hover:border-blue-500 rounded"
       (click)="addProduct(product)"
@@ -13,21 +13,14 @@
       Agregar al <i class="fa-solid fa-cart-shopping"></i>
     </button>
 
-    <div class="d-flex justify-content-evenly mt-3">
+    <div class="d-flex justify-content-evenly text-sm mt-3 antialiased">
       <span>
         Disponibles:
         {{ product.rating.count }}
       </span>
-      <span class="rounded border-2 border-[#9FC131] p-1 font-bold">
+      <span class="rounded border-2 border-[#9FC131] p-1 text-sm font-bold">
         Precio: {{ product.price }} $
       </span>
     </div>
-  </div>
-  <div
-    class="alert alert-warning fixed-bottom ms-3 w-25"
-    role="alert"
-    *ngIf="alert === true"
-  >
-    Has agregado un producto al carrito
   </div>
 </div>

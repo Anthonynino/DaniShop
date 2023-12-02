@@ -1,29 +1,47 @@
-<ol class="list-group list-group-numbered">
+<ol class="mx-auto max-w w-96 divide-y divide-gray-200 dark:divide-gray-950">
   <div class="mt-4" *ngIf="cartService.cart().length < 1">
     <h2 class="mt-4">No se ha agregado nada aun al carrito</h2>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
   </div>
   <li
-    class="list-group-item d-flex justify-content-between align-items-start mt-5"
+    class="py-4 sm:pb-4 border-b-1 border-b-black"
     *ngFor="let product of cartService.cart(); let i = index"
   >
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">{{ product.title }}</div>
+    <div class="flex items-center mt-1">
+      <div class="flex-shrink-0">
+        <button
+          (click)="removeProduct(i)"
+          type="button"
+          class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-1 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+        >
+          Eliminar
+        </button>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+          {{ product.title }}
+        </p>
+      </div>
+      <div
+        class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
+      >
+        {{ product.price }} $
+      </div>
     </div>
-    <span class="badge bg-primary rounded-pill"
-      >Precio: $/{{ product.price }}</span
-    >
-    <button class="btn btn-danger ms-2" (click)="removeProduct(i)">
-      Eliminar
-    </button>
   </li>
 </ol>
 
-<div class="d-flex align-items-center justify-content-end gap-1">
-  <h2>Subtotal:</h2>
-  <span class="h1">{{ cartService.amount() }} $</span>
-</div>
-
-<div *ngIf="cartService.cart().length != 0">
-  <button class="btn button" (click)="sellProducts()">Vendido</button>
+<div class="flex justify-end me-20">
+  <div>
+    <h1 class="text-2xl font-bold">Subtotal:</h1>
+    <span class="text-2xl font-bold"> {{ cartService.amount() }} $</span>
+  </div>
+  <div class="mt-10" *ngIf="cartService.cart().length != 0">
+    <button
+      (click)="sellProducts()"
+      type="button"
+      class="mt-10 px-5 py-3 text-base font-medium text-center text-white bg-[#034159] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Vendido
+    </button>
+  </div>
 </div>

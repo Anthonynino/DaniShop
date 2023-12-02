@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class AlertService {
   alertSource = new Subject()
   alert$ = this.alertSource.asObservable()
+  
 
   showAlert(){
     this.alertSource.next('Muestra la alerta');

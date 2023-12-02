@@ -18,15 +18,8 @@ export class ProductCardComponent {
 
    alertService = inject(AlertService)
 
-   alert = false;
-
+ 
    constructor(){
-    this.alertService.alert$.subscribe((res)=>{
-      this.alert = true;
-      setTimeout(()=>{
-        this.alert = false;
-      }, 1500)
-    })
    }
 
   addProduct(product: Products){
