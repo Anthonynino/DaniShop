@@ -25,13 +25,13 @@
         </button>
       </div>
     </div>
-    <div *ngIf="tasks().length > 0">
+    <div *ngIf="tasksService.tasks().length > 0">
       <p class="ms-5">Tareas completadas {{ completedTask().length }}</p>
       <p class="ms-5">Tareas incompletas {{ uncompletedTask().length }}</p>
     </div>
   </div>
 
-  <div class="ms-24 px-6" *ngFor="let task of tasks()">
+  <div class="ms-24 px-6" *ngFor="let task of tasksService.tasks()">
     <ul class="bg-white shadow overflow-hidden sm:rounded-md max-w-sm mt-6">
       <li class="border-t border-gray-200">
         <div class="px-16 py-3 sm:px-10">
@@ -73,7 +73,7 @@
       </li>
     </ul>
   </div>
-  <div class="mt-5" *ngIf="tasks().length > 0">
+  <div class="mt-5" *ngIf="tasksService.tasks().length > 0">
     <button
       type="button"
       (click)="resetTask()"

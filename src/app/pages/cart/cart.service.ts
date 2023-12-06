@@ -1,8 +1,8 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {toSignal} from '@angular/core/rxjs-interop'
-import { Products } from '../interfaces/product';
-import { ProductsService } from './products.service';
+import { Products } from '../../interfaces/product';
+import { ProductsService } from '../../services/products.service';
 
 @Injectable({
   providedIn: 'root'
