@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from 'src/app/components/product-card/product-card.component';
 import { ProductsService } from 'src/app/services/products.service';
 import { AlertService } from 'src/app/services/alert.service';
+import {MatPaginatorModule, PageEvent} from "@angular/material/paginator"
 
 
 @Component({
   selector: 'app-store',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent],
+  imports: [CommonModule, ProductCardComponent, MatPaginatorModule],
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss'],
 })
@@ -18,8 +19,14 @@ export class StoreComponent {
   alertService = inject(AlertService)
 
   alert = false;
+
+  length!: number;
+  data!:number
+  
   
   constructor(){
+   this.length = this.productService.products.length
+
      this.alertService.alert$.subscribe((res)=>{
       this.alert = true;
       setTimeout(()=>{
@@ -27,5 +34,18 @@ export class StoreComponent {
       }, 1500)
     })
   }
+
+  pageSize = 5;
+  currentPage = 0;
   
+  pageIndex = 0;
+
+  pageEvent!: PageEvent;
+
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.length = e.length;
+    this.pageSize = e.pageSize;
+    this.pageIndex = e.pageIndex;
+  }
 }

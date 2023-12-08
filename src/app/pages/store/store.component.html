@@ -8,6 +8,16 @@
     <i class="fa-solid fa-check"></i> Se agrego un producto al carrito.
   </div>
 </div>
+<mat-paginator
+  #paginator
+  [length]="productService.products()?.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 8, 10]"
+  (page)="handlePageEvent($event)"
+  [pageIndex]="pageIndex"
+>
+</mat-paginator>
+
 <div class="text-center">
   <div class="grid grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
     <div
