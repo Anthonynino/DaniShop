@@ -26,6 +26,8 @@ export class StoreComponent {
   currentPage = 0;
   pageIndex = 0;
   pageEvent!: PageEvent;
+
+
   
   
   constructor(){
@@ -47,5 +49,6 @@ export class StoreComponent {
     this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
   }
+
 
 }

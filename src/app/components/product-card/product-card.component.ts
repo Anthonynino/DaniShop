@@ -21,7 +21,8 @@ export class ProductCardComponent {
 
    router = inject(Router)
 
- 
+   lightBox: boolean = false;
+  
    constructor(){
    }
 
@@ -33,5 +34,11 @@ export class ProductCardComponent {
   navigate(id:number){
     this.router.navigate(['/details/',id])
   }
+  gridImgHandler(){
+    this.lightBox = true;
+  }
 
+  closeHandler(){
+    this.lightBox = false;
+  }
 }
