@@ -3,10 +3,11 @@
     <h2 class="mt-4">No se ha agregado nada aun al carrito</h2>
   </div>
   <li
-    class="py-4 sm:pb-4 border-b-1 border-b-black"
+    class="py-4 sm:pb-4 border-b-black"
     *ngFor="let product of cartService.cart(); let i = index"
   >
     <div class="flex items-center mt-1">
+      <mat-divider></mat-divider>
       <div class="flex-shrink-0">
         <button
           (click)="removeProduct(i)"
@@ -32,16 +33,19 @@
 
 <div class="flex justify-end me-20">
   <div>
-    <h1 class="text-2xl font-bold">Subtotal:</h1>
-    <span class="text-2xl font-bold"> {{ cartService.amount() }} $</span>
-  </div>
-  <div class="mt-10" *ngIf="cartService.cart().length != 0">
-    <button
-      (click)="sellProducts()"
-      type="button"
-      class="mt-10 px-5 py-3 text-base font-medium text-center text-white bg-[#034159] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    >
-      Vendido
-    </button>
+    <h1 class="text-2xl font-bold">
+      Subtotal:
+      <span class="text-2xl font-bold"> {{ cartService.amount() }} $</span>
+    </h1>
+
+    <div class="mt-2" *ngIf="cartService.cart().length != 0">
+      <button
+        (click)="sellProducts()"
+        type="button"
+        class="mt-10 px-5 py-3 text-base font-medium text-center text-white bg-[#034159] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Vendido
+      </button>
+    </div>
   </div>
 </div>

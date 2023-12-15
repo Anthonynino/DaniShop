@@ -12,4 +12,11 @@ import { CartService } from 'src/app/pages/cart/cart.service';
 })
 export class HeaderComponent {
   cartService = inject(CartService)
+
+  public active : boolean = false 
+
+ 
+  setActive(){
+    this.active = !this.active
+  }
 }
