@@ -24,7 +24,7 @@ export class DetailsComponent {
   constructor(){
     this.id = this.route.snapshot.paramMap.get('id') || '';
 
-    console.log(this.id)
+   
     this.product$ = this.productService.getProductId(this.id)
   }
 
