@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartService } from 'src/app/pages/cart/cart.service';
+import { CartService } from 'src/app/services/cart.service';
 import {MatDividerModule} from '@angular/material/divider';
 
 @Component({

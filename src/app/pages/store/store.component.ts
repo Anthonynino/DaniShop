@@ -28,10 +28,10 @@ export class StoreComponent {
   pageEvent!: PageEvent;
 
 
-  
-  
+
+
   constructor(){
-   this.length = this.productService.products.length
+   this.length = this.productService?.products?.length
 
      this.alertService.alert$.subscribe((res)=>{
       this.alert = true;
