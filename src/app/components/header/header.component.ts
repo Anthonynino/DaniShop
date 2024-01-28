@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { CartService } from 'src/app/pages/cart/cart.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -13,9 +13,9 @@ import { CartService } from 'src/app/pages/cart/cart.service';
 export class HeaderComponent {
   cartService = inject(CartService)
 
-  public active : boolean = false 
+  public active : boolean = false
 
- 
+
   setActive(){
     this.active = !this.active
   }

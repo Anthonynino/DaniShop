@@ -1,7 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Products } from 'src/app/interfaces/product';
-import { CartService } from 'src/app/pages/cart/cart.service';
+import { CartService } from 'src/app/services/cart.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { Router } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class ProductCardComponent {
    router = inject(Router)
 
    lightBox: boolean = false;
-  
+
    constructor(){
    }
 
