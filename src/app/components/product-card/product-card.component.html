@@ -5,7 +5,7 @@
   <img
     [src]="product?.image || ''"
     (click)="gridImgHandler()"
-    class="card-img-top mt-4"
+    class="card-img-top mt-4 test"
     [alt]="product?.title || ''"
   />
   <div class="card-body">
@@ -13,7 +13,7 @@
       {{ product?.title || "" }}
     </h5>
     <button
-      class="bg-[#034159] hover:bg-blue-400 text-white font-bold mt-1 rounded-full py-2 px-4 border-b-4 border-[#032559] hover:border-blue-500 rounded"
+      class="comprar bg-[#034159] hover:bg-blue-400 text-white font-bold mt-1 rounded-full py-2 px-4 border-b-4 border-[#032559] hover:border-blue-500 rounded"
       (click)="addProduct(product)"
     >
       Agregar al <i class="fa-solid fa-cart-shopping"></i>
@@ -31,7 +31,7 @@
       </div>
       <button
         (click)="navigate(product.id)"
-        class="flex ms-5 mb-4 bg-[#F2AD66] hover:bg-[#F29466] text-white font-bold mt-3 rounded-full px-4 border-b-2 border-[#F2E366] hover:border-[#F2D266] rounded"
+        class="navigate flex ms-5 mb-4 bg-[#F2AD66] hover:bg-[#F29466] text-white font-bold mt-3 rounded-full px-4 border-b-2 border-[#F2E366] hover:border-[#F2D266]"
       >
         Mas detalles
       </button>
